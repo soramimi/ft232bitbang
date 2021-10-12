@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ftdi.h>
+#include <signal.h>
 
 bool interrupted = false;
 
@@ -22,6 +23,8 @@ int main()
 {
 	struct ftdi_context *ftdi;
 	unsigned char data;
+
+	signal(SIGINT, onSIGINT);
 
 	int output = 0xff;
 

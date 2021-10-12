@@ -29,7 +29,8 @@ int main()
 
 	int output = 0x00;
 
-	if ((ftdi = ftdi_new()) == 0) {
+	ftdi = ftdi_new();
+	if (ftdi == 0) {
 		fprintf(stderr, "ftdi_bew failed\n");
 		return EXIT_FAILURE;
 	}
